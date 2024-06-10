@@ -44,6 +44,9 @@ export default function Index() {
         if (window.innerWidth < 360) {
           meipeispeed = 7;
           minpeileftspeed = 14;
+        } else if (window.innerWidth < 500) {
+          meipeispeed = 7;
+          minpeileftspeed = 18;
         } else if (window.innerWidth < 640) {
           meipeispeed = 10;
           minpeileftspeed = 25;
