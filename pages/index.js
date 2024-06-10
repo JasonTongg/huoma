@@ -137,11 +137,11 @@ export default function Index() {
         <div className="w-full h-[70vw] lg:h-[50vw] bg-letter mt-[3rem] flex items-center justify-around">
           <Image
             src={PeiPei}
-            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[300px]"
+            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[300px] lg:hidden block"
           />
           <Image
             src={MeiMei}
-            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[280px]"
+            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[280px] lg:hidden block"
             style={{ top: `${meiTop}%`, right: `${peiLeft}%` }}
           />
         </div>
