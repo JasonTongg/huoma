@@ -17,6 +17,9 @@
 
 .gang-of-three {
   font-family: "Gang of Three", Arial, sans-serif;
+}
+
+.gang-of-three.shadow {
   text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black,
     3px 3px 0 black;
 }
@@ -27,4 +30,40 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.translate-center {
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.bg-house {
+  background-image: url("../public/house.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-letter {
+  background-image: url("../public/letter.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-tag {
+  background-image: url("../public/tag.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
