@@ -33,27 +33,12 @@ export default function Index() {
 
   useEffect(() => {
     let min = 400;
-    if (window.innerWidth < 768) {
-      min = 100;
-    }
     const handleScroll = () => {
       if (window.scrollY > min && window.scrollY < 1400) {
         let meipeispeed = 20;
         let meipeimin = min / 16;
         let minpeileftspeed = 60;
-        if (window.innerWidth < 360) {
-          meipeispeed = 5;
-          minpeileftspeed = 14;
-        } else if (window.innerWidth < 500) {
-          meipeispeed = 5;
-          minpeileftspeed = 12;
-        } else if (window.innerWidth < 640) {
-          meipeispeed = 10;
-          minpeileftspeed = 25;
-        } else if (window.innerWidth < 768) {
-          meipeispeed = 12;
-          minpeileftspeed = 30;
-        } else if (window.innerWidth < 1024) {
+        if (window.innerWidth < 1024) {
           meipeispeed = 16;
         } else if (window.innerWidth < 1500) {
           meipeispeed = 18;
@@ -67,7 +52,9 @@ export default function Index() {
     };
 
     window.addEventListener("scroll", () => {
-      handleScroll();
+      if (window.innerWidth > 1024) {
+        handleScroll();
+      }
     });
 
     return () => {
@@ -147,7 +134,17 @@ export default function Index() {
             style={{ top: `${coinRightTop + 7}%`, right: `${coinLeft}%` }}
           />
         </div>
-        <div className="w-full h-[65vw] sm:h-[50vw] bg-letter mt-[3rem]"></div>
+        <div className="w-full h-[70vw] lg:h-[50vw] bg-letter mt-[3rem] flex items-center justify-around">
+          <Image
+            src={PeiPei}
+            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[300px]"
+          />
+          <Image
+            src={MeiMei}
+            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[280px]"
+            style={{ top: `${meiTop}%`, right: `${peiLeft}%` }}
+          />
+        </div>
       </main>
       <footer>Footer</footer>
     </div>
