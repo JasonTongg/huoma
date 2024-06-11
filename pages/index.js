@@ -204,7 +204,7 @@ export default function Index() {
           onClick={() => copyToClipboard(address)}
         ></MdOutlineContentCopy>
       </div>
-      <nav className="bg-[#f20c008f] sticky top-[48px] z-[10] left-0 hidden lg:flex gap-2 items-center justify-between w-[100%] lg:w-[80%] px-2 md:px-8 2xl:mb-[2rem] mb-[0[x]]">
+      <nav className="bg-[#f20c008f] sticky top-[48px] z-[10] left-0 hidden lg:grid gap-2 content-center justify-items-center grid-cols-3 items-center justify-between w-[100%] lg:w-[80%] px-2 md:px-2 2xl:mb-[2rem] mb-[0[x]]">
         <Link href="#">
           <Image src={Logo} className="w-[80px]" alt="image" />
         </Link>
