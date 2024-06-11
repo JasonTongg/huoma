@@ -142,7 +142,6 @@ export default function Index() {
       {play && <AudioPlayer audioSrc="./audio.mp3" />}
       <Modal
         open={open2}
-        onClose={handleClose2}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -236,9 +235,13 @@ export default function Index() {
           >
             <Image src={Telegram} className="w-[20px]" alt="image" />
           </Link>
-          <button className="from-[#DCB633] to-[#FCF78A] bg-gradient-to-r text-[#660000] gang-of-three py-[0.3rem] px-[1rem] rounded-[100px]">
-            BuyNow
-          </button>
+          <Link
+            target="_blank"
+            href={`https://app.uniswap.org/swap?inputCurrency=ETH&outputCurrency=${address}`}
+            className="from-[#DCB633] to-[#FCF78A] bg-gradient-to-r text-[#660000] gang-of-three py-[0.3rem] px-[1rem] rounded-[100px]"
+          >
+            Buy Now
+          </Link>
         </div>
       </nav>
       <nav className="lg:hidden flex w-full items-center justify-end p-4">
