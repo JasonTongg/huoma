@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <title>Meimei Token</title>
         {/* <link rel="icon" href="../app/favicon.ico" /> */}
-        <link rel="icon" href="./tabicon.png" />
+        <link rel="icon" href="./Meme_headicon.png" />
       </Head>
       <body>
         <Main />
