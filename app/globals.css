@@ -7,6 +7,9 @@
     text-wrap: balance;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @font-face {
   font-family: "Gang of Three";
@@ -15,8 +18,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Hashiba";
+  src: url("../public/hashiba.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .gang-of-three {
   font-family: "Gang of Three", Arial, sans-serif;
+}
+
+.hashiba {
+  font-family: "Hashiba", serif;
 }
 
 .gang-of-three.shadow {
@@ -49,14 +63,27 @@
 
 .bg-house {
   background-image: url("../public/house.svg");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1024px) {
+  .bg-house {
+    background-position: top;
+  }
 }
 
 .bg-letter {
   background-image: url("../public/letter.png");
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-mountain {
+  background-image: url("../public/mountain.svg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
