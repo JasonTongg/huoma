@@ -211,7 +211,6 @@ export default function Index() {
         <div className="hidden sm:flex items-center justify-center gap-6 gang-of-three text-[1.2rem] text-[#DCB633]">
           <Link href="#about">ABOUT</Link>
           <Link href="#token">TOKENOMICS</Link>
-          <Link href="#roadmap">ROADMAP</Link>
         </div>
         <div className="flex  items-center justify-center gap-4">
           <Link
@@ -272,9 +271,6 @@ export default function Index() {
           </Link>
           <Link href="#token" onClick={handleClose}>
             <MenuItem className="gang-of-three">Tokenomics</MenuItem>
-          </Link>
-          <Link href="#roadmap" onClick={handleClose}>
-            <MenuItem className="gang-of-three">Roadmap</MenuItem>
           </Link>
         </Menu>
       </nav>
