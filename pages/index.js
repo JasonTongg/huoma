@@ -50,7 +50,7 @@ const style2 = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  width: 800,
   bgcolor: "#A60800",
   boxShadow: 24,
   p: 4,
@@ -75,7 +75,7 @@ export default function Index() {
   const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
-    "0x0000000000000000000000000000000000000000"
+    "0x000000000000000000000000000000000000000"
   );
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -150,11 +150,30 @@ export default function Index() {
           <Box sx={style}>
             <Typography
               id="modal-modal-title"
-              variant="h4"
+              variant="h3"
               component="h2"
               className="gang-of-three"
             >
-              $meimei is calling..
+              $MEIMEI
+            </Typography>
+            <Typography
+              id="modal-modal-title"
+              variant="h4"
+              component="h2"
+              className="gang-of-three mb-[2rem]"
+            >
+              妹妹
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              variant="h6"
+              component="h2"
+              className="gang-of-three"
+            >
+              This website contains age-restricted materials. By entering, you
+              affirm that you are at least 18 years of age or the age of
+              majority in the jurisdiction you are accessing the website from
+              and you consent to viewing explicit content.
             </Typography>
             <div className="flex items-center justify-center gap-4">
               <Button
@@ -164,7 +183,7 @@ export default function Index() {
                 }}
                 className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
               >
-                接受
+                我已年满 18 岁
               </Button>
               <Button
                 onClick={() => {
@@ -173,7 +192,7 @@ export default function Index() {
                 }}
                 className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
               >
-                接受吧
+                我已年满 18 岁
               </Button>
             </div>
           </Box>
@@ -416,7 +435,7 @@ export default function Index() {
           </div>
           <div className="flex md:flex-row flex-col-reverse items-center justify-center p-4 gap-4 md:gap-16 w-full mt-[8rem]">
             <iframe
-              src={`https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=${address}`}
+              src={`https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=${address}`}
               width="100%"
               theme="light"
               style={{
