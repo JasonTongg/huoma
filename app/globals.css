@@ -30,12 +30,12 @@ html {
 }
 
 * {
-  cursor: url("../public/Meimei_pointer.svg"), auto;
+  cursor: url("../public/Pointer_B.png"), auto;
 }
 
 button,
 a {
-  cursor: url("../public/Active.svg"), pointer !important;
+  cursor: url("../public/Pointer_A.png"), pointer !important;
 }
 
 .hashiba {
