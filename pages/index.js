@@ -29,6 +29,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import AudioPlayer from "../components/player";
+import DragonScroll from "../public/Dragon_scroll.svg";
 
 const style = {
   width: "100%",
@@ -89,6 +90,8 @@ export default function Index() {
   const handleOpen2 = () => setOpen2(true);
   const handleClose2 = () => setOpen2(false);
 
+  const [topScroll, setTopScroll] = useState(-21);
+
   useEffect(() => {
     let min = 600;
     if (window.innerWidth < 1400) {
@@ -120,6 +123,9 @@ export default function Index() {
       if (window.innerWidth > 1024 && window.scrollY < 1200) {
         handleScroll();
       }
+      console.log("scrollY" + window.scrollY);
+      console.log("scoll height" + document.body.scrollHeight);
+      setTopScroll((window.scrollY / document.body.scrollHeight) * 115.9 - 21);
     });
 
     return () => {
@@ -135,10 +141,12 @@ export default function Index() {
 
   return (
     <div className="bg-[#F20C00] min-h-screen flex flex-col items-center justify-start gap-2">
-      {/* <audio className="hidden" autoplay loop>
-        <source src={Music} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio> */}
+      <Image
+        src={DragonScroll}
+        alt="Image"
+        className="fixed right-0 w-[50px] z-[30]"
+        style={{ top: `${topScroll}%` }}
+      ></Image>
       {play && <AudioPlayer audioSrc="./audio.mp3" />}
       <Modal
         open={open2}
@@ -182,22 +190,22 @@ export default function Index() {
                 }}
                 className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
               >
-                我已年满 18 岁
+                我已年满18岁
               </Button>
               <Button
                 onClick={() => {
                   handleClose2();
                   setPlay(true);
                 }}
-                className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
+                className="gang-of-three text-[#FBD406] text-[1.35rem] mt-[2rem] rounded-[10px]"
               >
-                我已年满 18 岁
+                18岁以下
               </Button>
             </div>
           </Box>
         </Box>
       </Modal>
-      <div className="flex text-xs md:text-2xl items-center justify-center gap-2 break-all gang-of-three sticky top-0 left-0 w-[103vw] z-[10] -translate-x-1 md:-translate-x-4 bg-[#FBD406] text-center p-2 px-4">
+      <div className="flex text-xs md:text-2xl items-center justify-center gap-2 break-all gang-of-three sticky top-0 left-0 w-[102.1vw] z-[10] -translate-x-1 md:-translate-x-4 bg-[#FBD406] text-center p-2 px-4">
         {address}
         <MdOutlineContentCopy
           className="cursor-pointer"
@@ -419,7 +427,7 @@ export default function Index() {
                   Token Supply
                 </h3>
                 <h2 className="hashiba text-4xl md:text-6xl text-[#DCB633] md:text-start text-center">
-                  1.000.000.000
+                  420.690.000.000
                 </h2>
               </div>
               <div className="flex flex-col gap-3 md:justify-start justify-center">

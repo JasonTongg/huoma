@@ -29,6 +29,15 @@ html {
   font-family: "Gang of Three", Arial, sans-serif;
 }
 
+* {
+  cursor: url("../public/Meimei_pointer.svg"), auto;
+}
+
+button,
+a {
+  cursor: url("../public/Active.svg"), pointer !important;
+}
+
 .hashiba {
   font-family: "Hashiba", serif;
 }
