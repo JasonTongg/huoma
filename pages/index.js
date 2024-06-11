@@ -31,7 +31,7 @@ import Modal from "@mui/material/Modal";
 import AudioPlayer from "../components/player";
 
 const style = {
-  width: 400,
+  width: "100%",
   bgcolor: "#A60800",
   color: "#FBD406",
   boxShadow: 24,
@@ -61,6 +61,9 @@ const style2 = {
   textAlign: "center",
   outline: "none",
   borderRadius: "10px",
+  "@media (max-width: 640px)": {
+    width: "100%", // Width when screen is less than 640px
+  },
 };
 
 export default function Index() {
