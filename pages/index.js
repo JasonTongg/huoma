@@ -76,7 +76,7 @@ export default function Index() {
   const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
-    "0x000000000000000000000000000000000000000"
+    "0xB6C332ca5C2d4aeEa80E9f05b632Fa62B8F70621"
   );
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -229,7 +229,7 @@ export default function Index() {
             <Image src={Twitter} className="w-[20px]" alt="image" />
           </Link>
           <Link
-            href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}`}
+            href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}?t=1718115514717`}
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
@@ -332,7 +332,7 @@ export default function Index() {
               <Image src={Twitter} className="w-[20px]" alt="image" />
             </Link>
             <Link
-              href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}`}
+              href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}?t=1718115514717`}
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
