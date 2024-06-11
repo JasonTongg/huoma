@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.19",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "lottie-web": "^5.12.2",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "file-loader": "^6.2.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4"
   }

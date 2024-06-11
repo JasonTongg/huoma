@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import lottie from "lottie-web";
 import Logo from "../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,14 +23,53 @@ import Girl1 from "../public/girl1.png";
 import Meimei2 from "../public/meimei2.png";
 import Coin1 from "../public/Coin1.png";
 import Coin2 from "../public/coin2.png";
+import DragonBoat from "../public/Dragonboat.svg";
+import LottieAnimation from "../components/animation";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import AudioPlayer from "../components/player";
+
+const style = {
+  width: 400,
+  bgcolor: "#A60800",
+  color: "#FBD406",
+  boxShadow: 24,
+  p: 4,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  textAlign: "center",
+  outline: "none",
+  border: "2px solid #FBD406",
+};
+
+const style2 = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 500,
+  bgcolor: "#A60800",
+  boxShadow: 24,
+  p: 4,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  textAlign: "center",
+  outline: "none",
+  borderRadius: "10px",
+};
 
 export default function Index() {
   const [coinLeft, setCoinLeft] = useState(10);
-  const [meiTop, setMeiTop] = useState(18);
-  const [peiTop, setPeiTop] = useState(15);
+  const [meiTop, setMeiTop] = useState(12);
+  const [peiTop, setPeiTop] = useState(10);
   const [peiLeft, setPeiLeft] = useState(30);
-  const [coinLeftTop, setCoinLeftTop] = useState(20);
-  const [coinRightTop, setCoinRightTop] = useState(20);
+  const [coinLeftTop, setCoinLeftTop] = useState(10);
+  const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
     "0x0000000000000000000000000000000000000000"
@@ -42,6 +82,10 @@ export default function Index() {
     setAnchorEl(null);
   };
 
+  const [open2, setOpen2] = React.useState(true);
+  const handleOpen2 = () => setOpen2(true);
+  const handleClose2 = () => setOpen2(false);
+
   useEffect(() => {
     let min = 600;
     if (window.innerWidth < 1400) {
@@ -50,16 +94,16 @@ export default function Index() {
     const handleScroll = () => {
       // console.log(window.scrollY);
       if (window.scrollY > min && window.scrollY < 1400) {
-        console.log(document.body.scrollHeight / 122.313131313131);
-        let meipeispeed = document.body.scrollHeight / 140;
-        let meipeimin = 25;
+        let meipeispeed = document.body.scrollHeight / 165;
+        let meipeimin = 21;
         let minpeileftspeed = 60;
         if (window.innerWidth < 1400) {
-          meipeimin = 400 / 20;
-          meipeispeed = document.body.scrollHeight / 122.31818181;
+          meipeimin = 15;
+          meipeispeed = document.body.scrollHeight / 140;
         }
         if (window.innerWidth < 1200) {
-          meipeispeed = document.body.scrollHeight / 122;
+          meipeimin = 12;
+          meipeispeed = document.body.scrollHeight / 125;
         }
 
         setMeiTop(meiTop + window.scrollY / meipeispeed - meipeimin);
@@ -84,8 +128,54 @@ export default function Index() {
     navigator.clipboard.writeText(text);
   };
 
+  const [play, setPlay] = useState(false);
+
   return (
     <div className="bg-[#F20C00] min-h-screen flex flex-col items-center justify-start gap-2">
+      {/* <audio className="hidden" autoplay loop>
+        <source src={Music} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio> */}
+      {play && <AudioPlayer audioSrc="./audio.mp3" />}
+      <Modal
+        open={open2}
+        onClose={handleClose2}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style2}>
+          <Box sx={style}>
+            <Typography
+              id="modal-modal-title"
+              variant="h4"
+              component="h2"
+              className="gang-of-three"
+            >
+              $meimei is calling..
+            </Typography>
+            <div className="flex items-center justify-center gap-4">
+              <Button
+                onClick={() => {
+                  handleClose2();
+                  setPlay(true);
+                }}
+                className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
+              >
+                接受
+              </Button>
+              <Button
+                onClick={() => {
+                  handleClose2();
+                  setPlay(true);
+                }}
+                className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
+              >
+                接受吧
+              </Button>
+            </div>
+          </Box>
+        </Box>
+      </Modal>
       <div className="flex text-xs md:text-2xl items-center justify-center gap-2 break-all gang-of-three sticky top-0 left-0 w-[103vw] z-[10] -translate-x-1 md:-translate-x-4 bg-[#FBD406] text-center p-2 px-4">
         {address}
         <MdOutlineContentCopy
@@ -93,9 +183,9 @@ export default function Index() {
           onClick={() => copyToClipboard(address)}
         ></MdOutlineContentCopy>
       </div>
-      <nav className="hidden lg:flex gap-2 items-center justify-between w-[100%] lg:w-[80%] px-2 md:px-8 2xl:mb-[2rem] mb-[0[x]]">
+      <nav className="bg-[#f20c008f] sticky top-[48px] z-[10] left-0 hidden lg:flex gap-2 items-center justify-between w-[100%] lg:w-[80%] px-2 md:px-8 2xl:mb-[2rem] mb-[0[x]]">
         <Link href="#">
-          <Image src={Logo} className="w-[80px]" />
+          <Image src={Logo} className="w-[80px]" alt="image" />
         </Link>
         <div className="hidden sm:flex items-center justify-center gap-6 gang-of-three text-[1.2rem] text-[#DCB633]">
           <Link href="#about">ABOUT</Link>
@@ -108,21 +198,21 @@ export default function Index() {
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
-            <Image src={Twitter} className="w-[20px]" />
+            <Image src={Twitter} className="w-[20px]" alt="image" />
           </Link>
           <Link
             href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}`}
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
-            <Image src={Dextools} className="w-[20px]" />
+            <Image src={Dextools} className="w-[20px]" alt="image" />
           </Link>
           <Link
             href="https://t.me/meimeitokenETH"
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
-            <Image src={Telegram} className="w-[20px]" />
+            <Image src={Telegram} className="w-[20px]" alt="image" />
           </Link>
           <button className="from-[#DCB633] to-[#FCF78A] bg-gradient-to-r text-[#660000] gang-of-three py-[0.3rem] px-[1rem] rounded-[100px]">
             BuyNow
@@ -169,56 +259,62 @@ export default function Index() {
             src={MeiMei}
             className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[280px] z-[4]"
             style={{ top: `${meiTop}%`, right: `${peiLeft}%` }}
+            alt="image"
           />
           <Image
             src={PeiPei}
             className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[300px] z-[4]"
             style={{ top: `${peiTop}%`, left: `${peiLeft}%` }}
+            alt="image"
           />
           <Image
             src={CoinLeft}
             className={`w-[60px] sm:w-[120px] md:w-[150px] z-[3] animate-bounce`}
             style={{ top: `${coinLeftTop}%`, left: `${coinLeft}%` }}
+            alt="image"
           />
           <Image
             src={CoinRight}
             className={`w-[60px] sm:w-[120px] md:w-[120px] z-[3] animate-bounce`}
             style={{ top: `${coinRightTop}%`, right: `${coinLeft}%` }}
+            alt="image"
           />
           <Image
             src={Gold1}
             className={`w-[60px] sm:w-[120px] md:w-[120px] z-[3] animate-spin`}
-            style={{ top: `${coinRightTop + 7}%`, left: `${coinLeft}%` }}
+            style={{ top: `${coinRightTop + 2}%`, left: `${coinLeft}%` }}
+            alt="image"
           />
           <Image
             src={Gold1}
             className={`w-[60px] sm:w-[120px] md:w-[120px] z-[3] animate-spin`}
-            style={{ top: `${coinRightTop + 7}%`, right: `${coinLeft}%` }}
+            style={{ top: `${coinRightTop + 2}%`, right: `${coinLeft}%` }}
+            alt="image"
           />
         </div>
         <div className="lg:hidden flex flex-col items-center justify-center gap-8 relative bg-house w-full pb-[150px]">
-          <Image src={Logo} className="w-[100px]"></Image>
+          <Image src={Logo} className="w-[100px]" alt="image" />
           <div className="flex  items-center justify-center gap-4">
             <Link
               href="https://x.com/meimeitoken?t=puvooEXOQyORXkkQmj-KIQ&s=09"
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
-              <Image src={Twitter} className="w-[20px]" />
+              <Image src={Twitter} className="w-[20px]" alt="image" />
             </Link>
             <Link
               href={`https://www.dextools.io/app/en/ether/pair-explorer/${address}`}
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
-              <Image src={Dextools} className="w-[20px]" />
+              <Image src={Dextools} className="w-[20px]" alt="image" />
             </Link>
             <Link
               href="https://t.me/meimeitokenETH"
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
-              <Image src={Telegram} className="w-[20px]" />
+              <Image src={Telegram} className="w-[20px]" alt="image" />
             </Link>
           </div>
           <button className="from-[#DCB633] to-[#FCF78A] bg-gradient-to-r text-[#660000] gang-of-three py-[0.3rem] px-[1rem] rounded-[100px]">
@@ -226,33 +322,40 @@ export default function Index() {
           </button>
           <Image
             src={MeiMei}
-            className="w-[110px] sm:w-[110px] md:w-[130px] z-[4] bottom-0 right-0 absolute"
+            alt="image"
+            className="w-[110px] sm:w-[110px] md:w-[130px] z-[4] bottom-0 right-0 sm:right-[60px] absolute"
           />
           <Image
             src={PeiPei}
-            className="w-[130px] sm:w-[130px] md:w-[150px] z-[4] left-0 bottom-[-25px] absolute"
+            alt="image"
+            className="w-[130px] sm:w-[130px] md:w-[150px] z-[4] left-0 sm:left-[60px] bottom-[-25px] absolute"
           />
         </div>
         <div className="lg:hidden flex w-full items-center justify-between p-4">
           <Image
             src={Coin1}
             className={`w-[40px] sm:w-[80px] md:w-[80px] animate-bounce`}
+            alt="image"
           />
           <Image
             src={Gold1}
             className={`w-[60px] sm:w-[120px] md:w-[120px] animate-spin`}
+            alt="image"
           />
           <Image
             src={Coin1}
+            alt="image"
             className={`w-[40px] sm:w-[80px] md:w-[80px] animate-bounce`}
           />
           <Image
             src={Gold1}
             className={`w-[60px] sm:w-[120px] md:w-[120px] animate-spin`}
+            alt="image"
           />
           <Image
             src={Coin1}
             className={`w-[40px] sm:w-[80px] md:w-[80px] animate-bounce`}
+            alt="image"
           />
         </div>
         <div
@@ -268,11 +371,26 @@ export default function Index() {
           </h2>
           <div className="w-full md:w-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 p-4 md:justify-items-start justify-items-center">
             <div className="relative w-[50%] md:w-full h-fit">
-              <Image src={Ring} className="animate-spin-slow"></Image>
-              <Image
-                src={Girl1}
+              <Image src={Ring} className="animate-spin-slow" alt="image" />
+              {/* <Image
+                src="../../../LottieFiles - free animation files built for Lottie_files"
                 className="absolute top-1/2 left-1/2 translate-center w-[87%]"
-              ></Image>
+                alt="image"
+                width={300}
+                height={300}
+              ></Image> */}
+              <div className="absolute top-1/2 left-1/2 translate-center w-[95%]">
+                <dotlottie-player
+                  src="https://lottie.host/fb3eb8a4-d61e-45e1-bbbf-d5e4603695b4/vArby5Vuyu.json"
+                  background="transparent"
+                  speed="1"
+                  style={{ width: "100%", height: "100%" }}
+                  loop
+                  autoplay
+                ></dotlottie-player>
+              </div>
+
+              {/* <LottieAnimation /> */}
             </div>
             <div className="flex w-full flex-col justify-center items-center md:items-start gap-7">
               <div className="flex flex-col md:justify-start justify-center gap-3">
@@ -304,13 +422,20 @@ export default function Index() {
                 display: "block",
                 borderRadius: "10px",
                 height: "600px",
+                maxWidth: "600px",
               }}
             />
-            <Image src={Meimei2} className="w-[50%] md:w-[350px]"></Image>
+            <Image src={Meimei2} className="w-[50%] md:w-[350px]" alt="image" />
           </div>
         </div>
+        <div className="w-full mt-[8rem]">
+          <Image src={DragonBoat} className="w-full" alt="image" />
+        </div>
       </main>
-      <footer>Footer</footer>
+      <footer className="w-full flex items-center justify-center flex-col gap-4 bg-[#A60800] p-4 mt-[8rem]">
+        <Image src={Logo} className="w-[150px]" alt="image" />
+        <p className="text-2xl font-bold">&copy; meimeitoken 2024</p>
+      </footer>
     </div>
   );
 }
