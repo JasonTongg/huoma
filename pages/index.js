@@ -20,7 +20,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Ring from "../public/ring.png";
 import Girl1 from "../public/girl1.png";
 import Meimei2 from "../public/meimei2.png";
-import Coin1 from "../public/coin1.png";
+import Coin1 from "../public/Coin1.png";
 import Coin2 from "../public/coin2.png";
 
 export default function Index() {
