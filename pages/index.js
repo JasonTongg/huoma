@@ -17,12 +17,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Ring from "../public/ring.png";
 import Meimei2 from "../public/meimei2.png";
 import Coin1 from "../public/Coin1.png";
-import DragonBoat from "../public/Dragonboat.svg";
+import DragonBoat from "../public/Dragonboat.png";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import AudioPlayer from "../components/player";
-import DragonScroll from "../public/Dragon_scroll.svg";
+import DragonScroll from "../public/Dragon_scroll.png";
 import Tokenomics from "../public/Tokenomics.png";
 
 const style = {
@@ -119,7 +119,7 @@ export default function Index() {
       }
       console.log("scrollY" + window.scrollY);
       console.log("scoll height" + document.body.scrollHeight);
-      setTopScroll((window.scrollY / document.body.scrollHeight) * 115.9 - 21);
+      setTopScroll((window.scrollY / document.body.scrollHeight) * 115.9);
     });
 
     return () => {
