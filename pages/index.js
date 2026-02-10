@@ -342,7 +342,7 @@ export default function Index() {
             href={`https://app.uniswap.org/swap?inputCurrency=ETH&outputCurrency=${address}`}
             className="from-[#DCB633] to-[#FCF78A] bg-gradient-to-r text-[#660000] gang-of-three py-[0.3rem] px-[1rem] rounded-[100px]"
           >
-            Buy Now
+            Buy Now!
           </Link>
           <Image
             src={MeiMei}
