@@ -17,7 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Ring from "../public/ring.png";
 import Meimei2 from "../public/meimei2.png";
 import Coin1 from "../public/Coin1.png";
-import DragonBoat from "../public/Dragonboat.png";
+import DragonBoat from "../public/DragonBoats.png";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
