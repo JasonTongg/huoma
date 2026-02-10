@@ -23,6 +23,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import AudioPlayer from "../components/player";
 import DragonScroll from "../public/Dragon_scroll.svg";
+import Tokenomics from "../public/Tokenomics.png";
 
 const style = {
   width: "100%",
@@ -62,14 +63,14 @@ const style2 = {
 
 export default function Index() {
   const [coinLeft, setCoinLeft] = useState(10);
-  const [meiTop, setMeiTop] = useState(12);
-  const [peiTop, setPeiTop] = useState(10);
+  const [meiTop, setMeiTop] = useState(10);
+  const [peiTop, setPeiTop] = useState(9);
   const [peiLeft, setPeiLeft] = useState(30);
   const [coinLeftTop, setCoinLeftTop] = useState(10);
   const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
-    "0xB6C332ca5C2d4aeEa80E9f05b632Fa62B8F70621"
+    "0x0000000000000000000000000000000000000"
   );
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -93,12 +94,12 @@ export default function Index() {
     const handleScroll = () => {
       // console.log(window.scrollY);
       if (window.scrollY > min && window.scrollY < 1400) {
-        let meipeispeed = document.body.scrollHeight / 165;
+        let meipeispeed = document.body.scrollHeight / 185;
         let meipeimin = 21;
         let minpeileftspeed = 60;
         if (window.innerWidth < 1400) {
           meipeimin = 15;
-          meipeispeed = document.body.scrollHeight / 140;
+          meipeispeed = document.body.scrollHeight / 150;
         }
         if (window.innerWidth < 1200) {
           meipeimin = 12;
@@ -107,8 +108,8 @@ export default function Index() {
 
         setMeiTop(meiTop + window.scrollY / meipeispeed - meipeimin);
         setPeiTop(peiTop + window.scrollY / meipeispeed - meipeimin);
-        setPeiLeft(peiLeft - window.scrollY / minpeileftspeed + 6);
-        setCoinLeft(coinLeft - window.scrollY / minpeileftspeed + 6);
+        setPeiLeft(peiLeft - window.scrollY / minpeileftspeed + 1);
+        setCoinLeft(coinLeft - window.scrollY / minpeileftspeed + 5);
       }
     };
 
@@ -154,7 +155,7 @@ export default function Index() {
               component="h2"
               className="gang-of-three"
             >
-              $MEIMEI
+              $HUOMA
             </Typography>
             <Typography
               id="modal-modal-title"
@@ -162,7 +163,7 @@ export default function Index() {
               component="h2"
               className="gang-of-three mb-[2rem]"
             >
-              妹妹
+              火马
             </Typography>
             <Typography
               id="modal-modal-description"
@@ -170,10 +171,7 @@ export default function Index() {
               component="h2"
               className="gang-of-three"
             >
-              This website contains age-restricted materials. By entering, you
-              affirm that you are at least 18 years of age or the age of
-              majority in the jurisdiction you are accessing the website from
-              and you consent to viewing explicit content.
+              The Fire Horse is back. <br /> Every 60 years, momentum resets.<br /> Enter before it runs.
             </Typography>
             <div className="flex items-center justify-center gap-4">
               <Button
@@ -279,13 +277,13 @@ export default function Index() {
         <div className="lg:block hidden w-full scrollContainer bg-house h-[500px] sm:h-[700px] md:h-[1150px] [&>*]:absolute">
           <Image
             src={MeiMei}
-            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[280px] z-[4]"
+            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[400px] z-[4]"
             style={{ top: `${meiTop}%`, right: `${peiLeft}%` }}
             alt="image"
           />
           <Image
             src={PeiPei}
-            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[300px] z-[4]"
+            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[450px] z-[4]"
             style={{ top: `${peiTop}%`, left: `${peiLeft}%` }}
             alt="image"
           />
@@ -405,15 +403,8 @@ export default function Index() {
                 width={300}
                 height={300}
               ></Image> */}
-              <div className="absolute top-1/2 left-1/2 translate-center w-[95%]">
-                <dotlottie-player
-                  src="https://lottie.host/fb3eb8a4-d61e-45e1-bbbf-d5e4603695b4/vArby5Vuyu.json"
-                  background="transparent"
-                  speed="1"
-                  style={{ width: "100%", height: "100%" }}
-                  loop
-                  autoplay
-                ></dotlottie-player>
+              <div className="absolute top-1/2 left-1/2 translate-x-[-48%] translate-y-[-50%] w-[95%]">
+                <Image src={Tokenomics} alt="image" />
               </div>
 
               {/* <LottieAnimation /> */}
