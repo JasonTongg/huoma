@@ -1,30 +1,23 @@
-import React, { useEffect, useState, useRef } from "react";
-import lottie from "lottie-web";
+import React, { useEffect, useState } from "react";
 import Logo from "../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import Tag from "../public/tag.svg";
 import Telegram from "../public/telegram.svg";
 import Twitter from "../public/twitter.svg";
 import Dextools from "../public/dextools.svg";
 import { MdOutlineContentCopy, MdMenu } from "react-icons/md";
 import MeiMei from "../public/meimei.png";
 import PeiPei from "../public/peipei.png";
-import House from "../public/house.svg";
 import CoinLeft from "../public/CoinLeft.png";
 import CoinRight from "../public/CoinRight.png";
-import Letter from "../public/letter.png";
 import Gold1 from "../public/gold1.png";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Ring from "../public/ring.png";
-import Girl1 from "../public/girl1.png";
 import Meimei2 from "../public/meimei2.png";
 import Coin1 from "../public/Coin1.png";
-import Coin2 from "../public/coin2.png";
 import DragonBoat from "../public/Dragonboat.svg";
-import LottieAnimation from "../components/animation";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -467,7 +460,7 @@ export default function Index() {
       </main>
       <footer className="w-full flex items-center justify-center flex-col gap-4 bg-[#A60800] p-4 mt-[8rem]">
         <Image src={Logo} className="w-[150px]" alt="image" />
-        <p className="text-2xl font-bold">&copy; meimeitoken 2024</p>
+        <p className="text-2xl font-bold">&copy; meimeitoken 2026</p>
       </footer>
     </div>
   );
