@@ -415,12 +415,12 @@ export default function Index() {
                   Token Supply
                 </h3>
                 <h2 className="hashiba text-4xl md:text-6xl text-[#DCB633] md:text-start text-center">
-                  420.690.000.000
+                  50.000.000.000
                 </h2>
               </div>
               <div className="flex flex-col gap-3 md:justify-start justify-center">
                 <h3 className="gang-of-three text-3xl md:text-4xl md:text-start text-center">
-                  No Taxes, No Bullshit. It’s that simple.
+                  Zero tax. Pure momentum
                 </h3>
                 <h2 className="hashiba text-4xl md:text-6xl text-[#DCB633] md:text-start text-center">
                   0% Buy & 0% Sell
