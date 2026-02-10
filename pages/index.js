@@ -451,7 +451,7 @@ export default function Index() {
       </main>
       <footer className="w-full flex items-center justify-center flex-col gap-4 bg-[#A60800] p-4 mt-[8rem]">
         <Image src={Logo} className="w-[150px]" alt="image" />
-        <p className="text-2xl font-bold">&copy; meimeitoken 2026</p>
+        <p className="text-2xl font-bold">&copy; huomatoken 2026</p>
       </footer>
     </div>
   );
