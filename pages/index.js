@@ -213,7 +213,7 @@ export default function Index() {
         </div>
         <div className="flex  items-center justify-center gap-4">
           <Link
-            href="https://x.com/meimeitoken?t=puvooEXOQyORXkkQmj-KIQ&s=09"
+            href="https://x.com/HuoMaTokenETH"
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
@@ -227,7 +227,7 @@ export default function Index() {
             <Image src={Dextools} className="w-[20px]" alt="image" />
           </Link>
           <Link
-            href="https://t.me/meimeitokenETH"
+            href="https://t.me/HuoMaTokenETH"
             target="_blank"
             className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
           >
@@ -316,7 +316,7 @@ export default function Index() {
           <Image src={Logo} className="w-[100px]" alt="image" />
           <div className="flex  items-center justify-center gap-4">
             <Link
-              href="https://x.com/meimeitoken?t=puvooEXOQyORXkkQmj-KIQ&s=09"
+              href="https://x.com/HuoMaTokenETH"
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
@@ -330,7 +330,7 @@ export default function Index() {
               <Image src={Dextools} className="w-[20px]" alt="image" />
             </Link>
             <Link
-              href="https://t.me/meimeitokenETH"
+              href="https://t.me/HuoMaTokenETH"
               target="_blank"
               className="flex items-center justify-center w-[40px] h-[40px] bg-[#A60800]"
             >
