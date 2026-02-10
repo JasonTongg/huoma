@@ -277,13 +277,13 @@ export default function Index() {
         <div className="lg:block hidden w-full scrollContainer bg-house h-[500px] sm:h-[700px] md:h-[1150px] [&>*]:absolute">
           <Image
             src={MeiMei}
-            className="w-[80px] sm:w-[110px] md:w-[150px] lg:w-[200px] 2xl:w-[400px] z-[4]"
+            className="w-[130px] sm:w-[160px] md:w-[200px] lg:w-[250px] 2xl:w-[400px] z-[4]"
             style={{ top: `${meiTop}%`, right: `${peiLeft}%` }}
             alt="image"
           />
           <Image
             src={PeiPei}
-            className="w-[90px] sm:w-[130px] md:w-[170px] lg:w-[220px] 2xl:w-[450px] z-[4]"
+            className="w-[140px] sm:w-[180px] md:w-[220px] lg:w-[270px] 2xl:w-[450px] z-[4]"
             style={{ top: `${peiTop}%`, left: `${peiLeft}%` }}
             alt="image"
           />
