@@ -6,9 +6,9 @@ export default function Document() {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <title>Meimei Token</title>
+        <title>Huoma Token</title>
         {/* <link rel="icon" href="../app/favicon.ico" /> */}
-        <link rel="icon" href="./Meme_headicon.png" />
+        <link rel="icon" href="./meimei2.png" />
       </Head>
       <body>
         <Main />

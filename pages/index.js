@@ -181,9 +181,9 @@ export default function Index() {
                 }}
                 className="gang-of-three text-[#FBD406] text-2xl bg-[#F20C00] mt-[2rem] rounded-[10px]"
               >
-                我已年满18岁
+                Join
               </Button>
-              <Button
+              {/* <Button
                 onClick={() => {
                   handleClose2();
                   setPlay(true);
@@ -191,7 +191,7 @@ export default function Index() {
                 className="gang-of-three text-[#FBD406] text-[1.35rem] mt-[2rem] rounded-[10px]"
               >
                 18岁以下
-              </Button>
+              </Button> */}
             </div>
           </Box>
         </Box>
