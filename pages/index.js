@@ -70,7 +70,7 @@ export default function Index() {
   const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
-    "0x0000000000000000000000000000000000000"
+    "0x9562cbdb907ff5f2e2f7edc21bb8bc6315a18046"
   );
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
