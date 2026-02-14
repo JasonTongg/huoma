@@ -70,7 +70,7 @@ export default function Index() {
   const [coinRightTop, setCoinRightTop] = useState(10);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [address, setAddress] = useState(
-    "0000000000000000000000000000000000000"
+    "0x0000000000000000000000000000000000000"
   );
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -428,7 +428,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          {/* <div className="flex md:flex-row flex-col-reverse items-center justify-center p-4 gap-4 md:gap-16 w-full mt-[8rem]">
+          <div className="flex md:flex-row flex-col-reverse items-center justify-center p-4 gap-4 md:gap-16 w-full mt-[8rem]">
             <iframe
               src={`https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=${address}`}
               width="100%"
@@ -443,7 +443,7 @@ export default function Index() {
               }}
             />
             <Image src={Meimei2} className="w-[50%] md:w-[350px]" alt="image" />
-          </div> */}
+          </div>
         </div>
         <div className="w-full mt-[8rem]">
           <Image src={DragonBoat} className="w-full" alt="image" />
